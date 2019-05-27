@@ -1,0 +1,20 @@
+<h2>Show Contract</h2>
+
+<ul>
+
+  <li>
+    <strong>Cost:</strong>
+    <%= @contract.cost %>
+  </li>
+
+  <li>
+    <strong>Ends on:</strong>
+    <%= @contract.ends_on %>
+  </li>
+
+  
+
+</ul>
+
+<span><%= link "Edit", to: contract_path(@conn, :edit, @contract) %></span>
+<span><%= link "Back", to: contract_path(@conn, :index) %></span>
