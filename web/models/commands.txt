@@ -1,0 +1,21 @@
+cc = Test.Repo.all(Ecto.assoc(vendor, :categories))  //loading associations
+
+Test.Repo.all(Test.Vendor) 
+
+vendor= %Test.Vendor{name: "Vattenfall"}
+
+
+defp must_be_in_future(_, value) do{
+     Ecto.DateTime.compare(value, Ecto.DateTime.utc)
+      |> get_error
+     }
+    end
+
+    defp get_error(comparison) do{
+      if comparison==:lt do 
+        [date: "cannot be in past"]
+      end
+      }
+    end
+
+    defp get_error(_), do: []

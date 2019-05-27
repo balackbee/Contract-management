@@ -1,0 +1,5 @@
+<h2>New Contract</h2>
+
+<%= render "form.html", Map.put(assigns, :action, contract_path(@conn, :create)) %>
+
+<span><%= link "Back", to: contract_path(@conn, :index) %></span>
