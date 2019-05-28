@@ -2,12 +2,12 @@ defmodule Test.User do
   use Test.Web, :model
 
   schema "users" do
+
     field :email, :string, null: false
     field :crypted_password, :string
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
-    field :name, :string, null: false
-   # field :date, Ecto.DateTime, null: false
+    field :name, :string
     
     has_many :contracts, Test.Test.Contract
       
@@ -21,10 +21,10 @@ defmodule Test.User do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:email, :password, :name])
-    |> validate_required([:email, :password, :name, :password_confirmation])
+    |> validate_required([:email, :password, :name])
     |> unique_constraint(:email)
     |> validate_format(:email, ~r/@/)
-    |> validate_length(:password, min: 8)
+    |> validate_length(:password, min: 6)
     |> validate_confirmation(:password)
 
 
