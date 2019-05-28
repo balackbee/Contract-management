@@ -1,0 +1,11 @@
+heroku create --buildpack hashnuke/elixir
+
+https://still-depths-85191.herokuapp.com/
+
+https://git.heroku.com/still-depths-85191.git
+
+
+mix run --no-halt
+
+
+heroku addons:create heroku-postgresql:hobby-dev
